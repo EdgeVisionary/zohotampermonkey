@@ -4,6 +4,7 @@
 // @version      0.1.0
 // @description  Remove header and footer from web tabs
 // @author       Jeremy Nagel - Modified by Keaton Hawkins
+// @updateURL    
 // @match        https://crmplus.zoho.com/*
 // @grant        GM_setValue
 // @grant        GM_getValue
