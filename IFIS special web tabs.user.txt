@@ -3,9 +3,8 @@
 // @namespace    http://tampermonkey.net/
 // @version      0.1.0
 // @description  Remove header and footer from web tabs
-// @updateURL    https://gist.githubusercontent.com/jeznag/c33fdb11c6ec42797a0df8730587c142/raw/gistfile1.txt
 // @author       Jeremy Nagel - Modified by Keaton Hawkins
-// @match        *://*/*
+// @match        https://crmplus.zoho.com/*
 // @grant        GM_setValue
 // @grant        GM_getValue
 // @require http://code.jquery.com/jquery-3.3.1.min.js
