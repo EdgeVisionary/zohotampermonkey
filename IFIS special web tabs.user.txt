@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         IFIS special web tabs
 // @namespace    http://tampermonkey.net/
-// @version      0.1.0
+// @version      0.2.0
 // @description  Remove header and footer from web tabs
 // @author       Jeremy Nagel - Modified by Keaton Hawkins
 // @updateURL    
@@ -10,6 +10,7 @@
 // @grant        GM_getValue
 // @require http://code.jquery.com/jquery-3.3.1.min.js
 // ==/UserScript==
+// THIS HAS BEEN PULLED FROM GIT
 (function () {
     "use strict";
 
@@ -28,11 +29,11 @@
         const LOCAL_STORAGE_KEY = "currentCRMAutofill";
         if ((location.href.includes("https://crm.zoho.com") || location.href.includes("crmsandbox.zoho.com") || location.href.includes("https://crmplus.zoho.com"))) {
 
-            if (location.href.includes('tab/Leads/')) {
+            if (location.href.includes('/tab/Leads/custom-view/3379622000001887072/')) {
             deleteElementWhenItAppears('#backArrowDV');
             }
 
-            if (location.href.includes('tab/Leads/custom-view/')) {
+            if (location.href.includes('tab/Leads/')) {
                 runCodeWhenElementAppears('td:contains(Warm)', () => {
                     window.$('td:contains(Warm)').each((idx, el) => {
                         el.style.backgroundColor = '#fbee64';
@@ -43,14 +44,80 @@
                         el.style.backgroundColor = '#73b4f9';
                     });
                 });
-                 runCodeWhenElementAppears('td:contains(Hot)', () => {
+                 runCodeWhenElementAppears('td:contains(Hot1)', () => {
                     window.$('td:contains(Hot)').each((idx, el) => {
                         el.style.backgroundColor = '#f41313';
                     });
                 });
             }
         }
-    }
+        console.log("Loop Complete");
+        window.setTimeout(handlePage2,4000);
+     }
+
+    function handlePage2() {
+
+        currentLocation = window.location.href;
+        const LOCAL_STORAGE_KEY = "currentCRMAutofill";
+        if ((location.href.includes("https://crm.zoho.com") || location.href.includes("crmsandbox.zoho.com") || location.href.includes("https://crmplus.zoho.com"))) {
+
+            if (location.href.includes('/tab/Leads/custom-view/3379622000001887072/')) {
+            deleteElementWhenItAppears('#backArrowDV');
+            }
+
+            if (location.href.includes('tab/Leads/')) {
+                runCodeWhenElementAppears('td:contains(Warm)', () => {
+                    window.$('td:contains(Warm)').each((idx, el) => {
+                        el.style.backgroundColor = '#fbee64';
+                    });
+                });
+                 runCodeWhenElementAppears('td:contains(Cold)', () => {
+                    window.$('td:contains(Cold)').each((idx, el) => {
+                        el.style.backgroundColor = '#73b4f9';
+                    });
+                });
+                 runCodeWhenElementAppears('td:contains(Hot1)', () => {
+                    window.$('td:contains(Hot)').each((idx, el) => {
+                        el.style.backgroundColor = '#f41313';
+                    });
+                });
+            }
+        }
+        console.log("Loop Complete");
+        window.setTimeout(handlePage3,4000);
+     }
+
+    function handlePage3() {
+
+        currentLocation = window.location.href;
+        const LOCAL_STORAGE_KEY = "currentCRMAutofill";
+        if ((location.href.includes("https://crm.zoho.com") || location.href.includes("crmsandbox.zoho.com") || location.href.includes("https://crmplus.zoho.com"))) {
+
+            if (location.href.includes('/tab/Leads/custom-view/3379622000001887072/')) {
+            deleteElementWhenItAppears('#backArrowDV');
+            }
+
+            if (location.href.includes('tab/Leads/')) {
+                runCodeWhenElementAppears('td:contains(Warm)', () => {
+                    window.$('td:contains(Warm)').each((idx, el) => {
+                        el.style.backgroundColor = '#fbee64';
+                    });
+                });
+                 runCodeWhenElementAppears('td:contains(Cold)', () => {
+                    window.$('td:contains(Cold)').each((idx, el) => {
+                        el.style.backgroundColor = '#73b4f9';
+                    });
+                });
+                 runCodeWhenElementAppears('td:contains(Hot1)', () => {
+                    window.$('td:contains(Hot)').each((idx, el) => {
+                        el.style.backgroundColor = '#f41313';
+                    });
+                });
+            }
+        }
+        console.log("Loop Complete");
+
+     }
 
      function deleteElementWhenItAppears(selector) {
       const checkingInterval = setInterval(() => {
@@ -79,3 +146,11 @@
         }
     }, 500);
 })();
+
+            document.getElementById("fetchdate_title").onclick = function() {Reload()};
+
+
+function Reload() {
+    console.log("Found Click");
+window.location.href = "https://crmplus.zoho.com/edgevl/index.do#crm/tab/Leads";
+}
