@@ -4,13 +4,12 @@
 // @version      0.3.0
 // @description  Remove header and footer from web tabs
 // @author       Jeremy Nagel - Modified by Keaton Hawkins
-// @updateURL    https://raw.githubusercontent.com/EdgeVisionary/zohotampermonkey/master/IFIS%20special%20web%20tabs.user.txt
 // @match        https://crmplus.zoho.com/*
 // @grant        GM_setValue
 // @grant        GM_getValue
-// @require http://code.jquery.com/jquery-3.3.1.min.js
+// @require      http://code.jquery.com/jquery-3.3.1.min.js
+// @updateURL    https://raw.githubusercontent.com/EdgeVisionary/zohotampermonkey/master/IFIS%20special%20web%20tabs.user.txt
 // ==/UserScript==
-// THIS HAS BEEN PULLED FROM GIT
 (function () {
     "use strict";
 
@@ -29,11 +28,11 @@
         const LOCAL_STORAGE_KEY = "currentCRMAutofill";
         if ((location.href.includes("https://crm.zoho.com") || location.href.includes("crmsandbox.zoho.com") || location.href.includes("https://crmplus.zoho.com"))) {
 
-            if (location.href.includes('/tab/Leads/custom-view/3379622000001887072/')) {
+            if (location.href.includes('/tab/Leads/3379622000002416003')) {
             deleteElementWhenItAppears('#backArrowDV');
             }
 
-            if (location.href.includes('tab/Leads/')) {
+            if (location.href.includes('/tab/Leads/custom-view/3379622000000087501/canvas/')) {
                 runCodeWhenElementAppears('td:contains(Warm)', () => {
                     window.$('td:contains(Warm)').each((idx, el) => {
                         el.style.backgroundColor = '#fbee64';
@@ -61,11 +60,11 @@
         const LOCAL_STORAGE_KEY = "currentCRMAutofill";
         if ((location.href.includes("https://crm.zoho.com") || location.href.includes("crmsandbox.zoho.com") || location.href.includes("https://crmplus.zoho.com"))) {
 
-            if (location.href.includes('/tab/Leads/custom-view/3379622000001887072/')) {
+            if (location.href.includes('/tab/Leads/3379622000002416003')) {
             deleteElementWhenItAppears('#backArrowDV');
             }
 
-            if (location.href.includes('tab/Leads/')) {
+            if (location.href.includes('/tab/Leads/custom-view/3379622000000087501/canvas/')) {
                 runCodeWhenElementAppears('td:contains(Warm)', () => {
                     window.$('td:contains(Warm)').each((idx, el) => {
                         el.style.backgroundColor = '#fbee64';
@@ -93,11 +92,11 @@
         const LOCAL_STORAGE_KEY = "currentCRMAutofill";
         if ((location.href.includes("https://crm.zoho.com") || location.href.includes("crmsandbox.zoho.com") || location.href.includes("https://crmplus.zoho.com"))) {
 
-            if (location.href.includes('/tab/Leads/custom-view/3379622000001887072/')) {
+            if (location.href.includes('/tab/Leads/3379622000002416003')) {
             deleteElementWhenItAppears('#backArrowDV');
             }
 
-            if (location.href.includes('tab/Leads/')) {
+            if (location.href.includes('/tab/Leads/custom-view/3379622000000087501/canvas/')) {
                 runCodeWhenElementAppears('td:contains(Warm)', () => {
                     window.$('td:contains(Warm)').each((idx, el) => {
                         el.style.backgroundColor = '#fbee64';
